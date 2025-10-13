@@ -1,3 +1,5 @@
+//https://codeforces.com/group/vXmuu8BIUj/contests
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -5,7 +7,8 @@ int main(){
     int n;
     cin >> n;
     for(int i = 0; i<n; i++) {
-        int cant, temp;
+        int cant, temp, menor, posicionMenor;
+        menor = 10000000000;
         bool posible;
         posible = true;
         vector<int> vasos;
@@ -13,17 +16,34 @@ int main(){
         
         for(int j = 0; j<cant; j++) {
             cin >> temp;
+            if(temp < menor) {
+                menor = temp;
+                posicionMenor = j;
+            }
             vasos.push_back(temp);
         }
         
-        for(int k = 0; k<cant; k++) {
-            if(vasos[k] == vasos[n-1] && posible){
-            break;
-            } else if (vasos[k] < vasos[n-1]) {
+        for(int k = 0; k<cant-1; k++) {
+            if(vasos[k] < vasos[cant-1] && posible){
                 posible = false;
-            } else {
-                
+                //cout << vasos[k] << " en posicion " << k << " es menor que " << vasos[cant-1] << " en el ciclo " << i << endl;
+                //debugeando a manito como dios manda
+                break;
+            } while(vasos[k] > vasos[posicionMenor] && vasos[k] > vasos[cant-1]){
+                vasos[posicionMenor] += 1;
+                vasos[k] -= 1;
+                for(int l = k; l<cant; l++) {
+                    if(vasos[l] < vasos[posicionMenor]) {
+                        posicionMenor = l;
+                    }
+                }
             }
+        }
+
+        if(posible) {
+            cout << "YES" << endl;
+        } else {   
+            cout << "NO" << endl;
         }
         //aca termine el rellenado?? y ahora tengo que comparar 
         
