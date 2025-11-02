@@ -1,33 +1,35 @@
+//https://codeforces.com/contest/2162/problem/C
+
 #include <bits/stdc++.h>
 using namespace std;
+
+int getSignificativo(int n) {
+    for(int i = 31; i >= 0; i--) {
+        if(n & (1 << i)) {
+            return 1 << i;
+        } 
+    }
+    return -1;
+}
+
+
 
 int main() {
 	int t;
 	cin >> t;
 	for(int i = 0; i < t; i++) {
-		int aInicial, a, b;
-		vector<int> respuestas;
-		cin >> aInicial >> b;
-		for(int j = 0; j < aInicial; j++) {
-            if(a == b) {
-                break;
-            }
-            a = aInicial;
-			respuestas.clear();
-			for(int k = j; k < aInicial; k++) {
-				a = a ^ k;
-				if(a == b) {
-					break;
-				}
-			}
-		}
+		int a, b, c;
+		cin >> a >> b;
+		c = a^b;
 		
-		for(int numero : respuestas) {
-			cout << numero;
+		if(c == 0) {
+		    cout << 0 << endl;
+		} else if (getSignificativo(b) > getSignificativo(a)){ 
+		    cout << -1 << endl;
+		} else if (c <= a) {
+		    cout << 1 << endl << c << endl;
+		} else {
+            cout << 2 << endl << (c-getSignificativo(a)) << " " << getSignificativo(a) << endl;
 		}
 	}
 }
-// ta malo pq lo hago de forma secuencial TODO, quizas si 
-// hubiera sacado una logica transformandolos a binario y 
-// utilizando el inverso???? lo lograba pero ya queda 
-// una hora nma asi que mato, q lata
