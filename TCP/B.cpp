@@ -1,3 +1,6 @@
+//Me da malo recien el test 19 que no se onde ta malo, me voy a morir de pena 
+//en vola deberia revisar las iteraciones pero en teoria funcan bien???? quizas si son datos impares se me muere un
+//poquito la parte del /10 weno eso q fokin pena 
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,6 +19,7 @@ int main() {
         
         if(i < (casos/10)) {
             cout << "ROJO" << endl;
+            std::cout << std::flush;
             cin >> respuesta;
             if(respuesta == "GANASTE") {
                 isRed = true;
@@ -25,15 +29,22 @@ int main() {
                 patron.push_back(isRed);
             }
         } else {
+            i--;
+            int j;
+            j = 0;
             
-            
-            //cout << patron[j];
-        // 
-        //for( <7)
-        //patron[i]
+            while(j < patron.size()) {
+                if(patron[j]) {
+                    cout << "ROJO" << endl;
+                    std::cout << std::flush;                   
+                } else {
+                    cout << "NEGRO" << endl;
+                    std::cout << std::flush;                    
+                }
+            cin >> respuesta;
+            j++;
+            i++;
+            }    
         }
-        
-        
-        
     } 
 }
