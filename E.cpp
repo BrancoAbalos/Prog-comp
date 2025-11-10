@@ -9,9 +9,12 @@ int main()
     for(int i = 0; i < k; i++) {
         string m;
         if(m[0] == '+') {
-            for(const auto&p : almacen) { //ta malo pq lo va a hacer por cada distinto, pero debo cambiarlo
-                if(m[1] != p.first) {
-                    almacen[] += 1;
+            int value;
+            value = (m[1]-0);
+            for(auto&p : almacen) {
+                if(value != p.first) {
+                    p.first = value;
+                    p.second += 1;
                 }
             }
         } else {
