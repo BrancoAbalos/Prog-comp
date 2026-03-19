@@ -8,10 +8,10 @@ Repositorio personal donde voy actualizando todos los codigos que vaya viendo a 
 - LeetCode
 
 # Eventitos compuestos: 
--ICPC 2025 (participe)
--TCP 2025 (participe)
--ICPC 2024 (revisados algunos)
--Contest Universitarios Chilenos Semanales 
--Monton monton d estudio autonomo cn amigos
+- ICPC 2025 (participe)
+- TCP 2025 (participe)
+- ICPC 2024 (revisados algunos)
+- Contest Universitarios Chilenos Semanales 
+- Monton monton d estudio autonomo cn amigos
 
 Nunca olvidar q siempre que veo algo nuevo solo me queda claro que queda muxo que aprender SDFKLSKLDFKSDFF pero la experiencia es muy bonita. Gracias d corazon a mis xanxitos que me enseñaron todo esto, no saben cuanto los quiero [R, N, N]
